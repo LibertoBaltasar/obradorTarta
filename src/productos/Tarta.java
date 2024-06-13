@@ -2,18 +2,30 @@ package productos;
 
 import utilidades.Utilidades;
 
-public abstract class Tarta extends Producto {
-    String cobertura;
-    String sabor;
-    int stock;
+public class Tarta extends Producto {
+    //TODO: añadir opcion de porciones
+    private String sabor;
+
+    public String getSabor() {
+        return sabor;
+    }
 
     public Tarta() {
         super();
-        String cobertura= Utilidades.pedirCadena();
-        this.cobertura = cobertura;
+        System.out.println("Introduce un sabor");
         String sabor= Utilidades.pedirCadena();
         this.sabor = sabor;
-        int stock= Utilidades.pedirEntero();
-        this.stock = stock;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"Tarta{" +
+                ", sabor='" + sabor + '\'' +
+                '}';
+    }
+
+    @Override
+    public void verprecio() {
+
     }
 }
